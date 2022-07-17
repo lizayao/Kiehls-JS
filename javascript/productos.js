@@ -80,15 +80,7 @@ for (const producto of productos){
 
 let descuentos = document.getElementById("descuentos")
 descuentos.onclick = () => {alert("Si comprás más de 4 productos, te damos un 30% de descuento en el total!")}
-
-let formularioRegistro = document.getElementById("formulario");
-formularioRegistro.addEventListener("submit", validarFormulario);
-
-function validarFormulario (e){
-    e.preventDefault();
-    alert("Datos registrados")
-} */
-
+*/
 
 // STORAGE + JSON //
 
