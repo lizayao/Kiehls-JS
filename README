@@ -1,0 +1,6 @@
+En principio realice el HTML de la pagina incorporando JS mediante la etiqueta <script>.
+Para el simulador decidí elegir el del calculo del costo de los productos y/o servicios elegidos por el usuario.
+El simulador permite añadir los precios y cantidades de hasta 5 productos. Y esto lo aplicamos mediante el ciclo "for". El usuario debe ingresar un numero positivo para que se vaya sumando. 
+En caso de que ingrese cero o espacio/vacio tanto en precio como en cantidad, la pagina mostrara una alerta para que vuelva a ingresar el dato correspondiente.
+Se van sumando los precios ingresados y al final hay un alert que especifica el precio total.
+En JS primero declaro las variables de forma global, luego declaro las funciones y por ultimo aplico el ciclo for incorporando dichas variables y funciones.
