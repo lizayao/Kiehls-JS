@@ -1,90 +1,6 @@
-// SIMULADOR //
+// PRODUCTOS //
 
-/* let precio;
-let cantidad = 0;
-let precioTotal = 0;
-let cantidadTotal = 0;
-
-function ingresarPrecio(){
-    precio = Number(prompt("Ingrese el precio del producto"));
-    while((isNaN(precio)) || (precio === 0)){
-        precio = Number(prompt("Por favor ingrese un valor numérico mayor a cero"));
-    }
-}
-
-function ingresarCantidad(){
-    cantidad = parseInt(prompt("Ingrese la cantidad a comprar del producto"));
-    while((isNaN(cantidad)) || (cantidad === 0)){
-        cantidad = parseInt(prompt("Por favor ingrese la cantidad"));
-    }
-    return cantidad;
-}
-
-function calcularCantidad(){
-    cantidadTotal += cantidad
-}
-
-function calcularTotal(precio, cantidad){
-    precioTotal += precio * cantidad;
-}
-
-for (let i = 0; i < 5; i++){
-    ingresarPrecio();
-    ingresarCantidad(); 
-    calcularCantidad();
-    calcularTotal(precio, cantidad);
-}  */
-
-
-// OBJETO + ARRAYS //
-
-/* class Producto{
-    constructor(nombre, precio, cantidad){
-        this.nombre = nombre;
-        this.precio = precio;
-        this.cantidad = cantidad;
-    }
-}
-
-const producto1 = new Producto("Ultra Facial Oil-Free Cleanser", 6390, cantidad)
-const producto2 = new Producto("Cucumber Herbal Conditioning Cleanser", 6390, cantidad)
-const producto3 = new Producto("Rare Earth Deep Pore Daily Cleanser", 6390, cantidad)
-
-const listado = []
-listado.push(producto1);
-listado.push(producto2);
-listado.push(producto3);
-
-let detalleCompra = "Cantidad de productos seleccionados: " + cantidadTotal + "\nTotal a abonar: " + "$ " + precioTotal
-
-alert(detalleCompra) */
-
-
-// DOM + EVENTOS //
-
-/* let titulo = document.getElementById("titulo");
-titulo.innerText = "Productos Skincare Kiehl's";
-
-document.getElementById("nombre").value = "Liza Yao"
-
-const productos = [{nombre: "Ultra Facial Oil-Free Cleanser", descripcion: "Limpiador facial sin aceite", precio: 6390},
-                   {nombre: "Cucumber Herbal Conditioning Cleanser", descripcion: "Limpiador facial con esencia de pepino", precio: 6390},
-                   {nombre: "Rare Earth Deep Pore Daily Cleanser", descripcion: "Limpiador facial para poros", precio: 6390},];
-for (const producto of productos){
-    let contenedor = document.createElement("div");
-    contenedor.innerHTML = `<h3> Producto: ${producto.nombre}</h3>
-                            <p> Descripción: ${producto.descripcion}</p>
-                            <b> Precio: $ ${producto.precio}</b>`;
-    document.body.appendChild(contenedor);
-}
-
-let descuentos = document.getElementById("descuentos")
-descuentos.onclick = () => {alert("Si comprás más de 4 productos, te damos un 30% de descuento en el total!")}
-*/
-
-// STORAGE + JSON //
-
-let productos = [
+const productos = [
     {
         id: "01",
         categoria: "Limpiadores y exfoliantes",
@@ -183,6 +99,8 @@ let productos = [
     },
 ]
 
+// DETALLE PRODUCTOS //
+
 let bolsa
 
 if(JSON.parse(localStorage.getItem("bolsa"))){
@@ -217,6 +135,8 @@ function detalleProductos(){
 
 detalleProductos()
 
+// AGREGAR BOLSA //
+
 const btnAgregar = document.getElementsByClassName("btnAgregar");
 
 for (let i = 0; i < btnAgregar.length; i++){
@@ -224,10 +144,10 @@ for (let i = 0; i < btnAgregar.length; i++){
     element.addEventListener("click", agregarBolsa)
 }
 
-/* function conteo(){ 
+function conteo(){ 
     const contador = document.getElementById('seleccion')
     contador.innerHTML = bolsa.reduce((acc, prod) => acc + prod.cantidad, 0)
-} */ 
+} 
 
 function agregarBolsa(e){
     const btn = e.target;
@@ -250,3 +170,46 @@ function agregarBolsa(e){
         timer: 1500
     })
   }
+
+// FILTRAR PRODUCTOS //
+
+/* let buscador = document.getElementById("inputSearch")
+let filtrar = document.getElementById("filtrar")
+
+function filtrarPorCat() {
+    let verTodo = document.createElement("button")
+    verTodo.innerText = ("Ver Todo")
+    showProducts.append(verTodo)
+    const filteredProducts = products.filter((product) => product.category === buscador.value)
+    console.log(filteredProducts)
+
+    filteredProducts.forEach((filter) => {
+        let cardFilter = document.createElement("div")
+        showAllProducts.append(cardFilter)
+        let imgFilter = document.createElement("img")
+        imgFilter.setAttribute("src", filter.img)
+        let nameFilter = document.createElement("h3")
+        nameFilter.innerText = (filter.name)
+        let priceFilter = document.createElement("p")
+        priceFilter.innerText = (filter.price)
+        let buyButtonFilter = document.createElement("button")
+        buyButtonFilter.innerText = ("Agregar al carrito")
+        cardFilter.append(imgFilter, nameFilter, priceFilter, buyButtonFilter)
+
+    })
+
+    verTodo.onclick = () => {
+        showAllProducts.innerHTML = ``
+        mostrarProductos()
+    }
+}
+
+buscador.onchange = () => {
+    showAllProducts.innerHTML = ``
+    filtrarPorCat()
+}
+
+filtrar.onclick = () => {
+    showAllProducts.innerHTML = ``
+    filtrarPorCat()
+} */

@@ -35,18 +35,16 @@ if(bolsa.length == 0){
             <table>
                 <thead>
                     <tr>
-                        <th></th>
                         <th class='txtTabla'>Producto</th>
                         <th class='txtTabla'>Cantidad</th>
                         <th class='txtTabla'>Precio</th>
-                        <th class='txtTabla'></th>
+                        <th class='txtTabla'>Eliminar</th>
                     </tr>
                 </thead>
                 <tbody id='tbody'>
                 </tbody>
                 <tfoot>
                     <tr>
-                        <th></th>
                         <th></th>
                         <th></th>
                         <th class='txtTotal'>Total:</th>
@@ -65,21 +63,22 @@ if(bolsa.length == 0){
         const {id, nombre, img, precio, cantidad} = element
         const resumen = `
             <tr id=${id}>
-
                 <th class='detallesTabla'><img class='imgProducto' src=${img} alt='foto del producto'></th>
                 <th class='tituloProd'>${nombre}</th>
                 <th>${cantidad}</th>
                 <th>$${(cantidad * precio).toLocaleString()}</th>
-                <th><img id=${id} class="eliminar" src='../img/eliminar.png' alt='eliminar producto' height=25px></th>
+                <th><img id=${id} class="eliminar" src='../img/eliminar.png' alt='eliminar producto' height=25px onclick="eliminarProducto()"></th>
             </tr>`
             tbody.innerHTML += resumen 
+
+            const eliminar = document.getElementById(id);
+            console.log(eliminar)
+            eliminar.addEventListener("click", eliminarProducto)
     }  
 }
 
-const eliminar = document.getElementByClass("eliminar")
-eliminar.addEventListener("click", eliminarProducto)
-
-function eliminarProducto(){
+function eliminarProducto(e){
+    /* alert("Producto eliminado") */
     const btn = e.target;
     const idBoton = btn.getAttribute('id');
     const prodEncontrado = productos.find((item) => item.id == idBoton);
@@ -107,3 +106,20 @@ function eliminarProducto(){
     })
 }
 
+// VACIAR BOLSA //
+
+/* let deleteCart = document.createElement("button")
+deleteCart.innerText = ("Vaciar carrito")
+div.append(deleteCart)
+
+deleteCart.onclick = () => {
+ 
+    cart = []
+    div.innerHTML = ``
+    console.log(cart)
+}
+
+buttonCart.onclick = () => {
+div.innerHTML = ``    
+showCart()
+} */

@@ -47,8 +47,21 @@ body {
     font-size: 0;
   }
 
-.imagenPortada{
-  padding: 10px;
+#inicio{
+;
+}
+.portada{
+  text-align: center;
+  
+  }
+
+.infoInicio{
+  display: ;
+  flex-direction: row;
+  text-align: center;
+  font-size: 20px;
+  margin: 50px;
+  padding: 50px;
 }
 
 #contenedor{
@@ -112,17 +125,14 @@ body {
 .contenedorTabla{
   display: flex;
   flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: space-between;
+  justify-content: center;
   margin: 20px
 }
 .txtTabla{
   padding: 10px;
   font-size: 20px;
 }
-.detallesTabla{
-  ;
-}
+
 table{
   border-radius: 5px;
   color: black;
@@ -149,6 +159,17 @@ tfoot tr th{
   background: black;
   color: white;
   padding: 10px;
+}
+
+.tituloPrincipal{
+  text-align: center;
+  text-decoration: underline;
+  margin: 20px;
+}
+
+#filtro{
+  text-align: right;
+  margin: 20px;
 }
 
 .btnVolver{

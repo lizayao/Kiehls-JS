@@ -1,8 +1,8 @@
 
-let formularioRegistro = document.getElementById("formulario");
+const formularioRegistro = document.getElementById("formulario");
 formularioRegistro.addEventListener("submit", validarFormulario);
 
-function validarFormulario (e){
+function validarFormulario(e) {
     e.preventDefault();
     Swal.fire({
         position: 'center',

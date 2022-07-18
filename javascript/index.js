@@ -1,19 +1,13 @@
 
 const body = `
-            <img src="img/portadas/local.jpg" class=imagenPortada>
-            <img src="img/portadas/portada1.jpg" height=500px>
-            <img src="img/portadas/portada2.jpg" height=500px>
-
+            
             `
-
-const portada = document.getElementById("portada")
-portada.innerHTML += body
-
-/* Falta darle formato */
+const inicio = document.getElementById("inicio")
+inicio.innerHTML += body
 
 setTimeout(() => {
     Swal.fire({
         title: '¡Envío gratis!',
-        text: 'Superando los $10.000 en tu compra.',
+        text: 'Superando los $10.000 en la compra ofrecemos envío gratis a todo el país.',
       })
-}, 3000)
+}, 2000)
