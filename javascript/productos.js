@@ -128,8 +128,8 @@ function detalleProductos(){
                                 <button id=${id} class="btnAgregar"> Agregar a la bolsa </button>
                             </div>
                         </div>`
-        const contenedor = document.getElementById("contenedor")
-        contenedor.innerHTML += detalle
+        const contenedorProductos = document.getElementById("contenedorProductos")
+        contenedorProductos.innerHTML += detalle
     }
 }
 

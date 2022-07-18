@@ -38,7 +38,7 @@ if(bolsa.length == 0){
                         <th class='txtTabla'>Producto</th>
                         <th class='txtTabla'>Cantidad</th>
                         <th class='txtTabla'>Precio</th>
-                        <th class='txtTabla'>Eliminar</th>
+                        <th class='txtTabla'></th>
                     </tr>
                 </thead>
                 <tbody id='tbody'>
@@ -67,29 +67,25 @@ if(bolsa.length == 0){
                 <th class='tituloProd'>${nombre}</th>
                 <th>${cantidad}</th>
                 <th>$${(cantidad * precio).toLocaleString()}</th>
-                <th><img id=${id} class="eliminar" src='../img/eliminar.png' alt='eliminar producto' height=25px onclick="eliminarProducto()"></th>
+                <th>
+                    <button class="btn btn-danger btn-small">
+                        <img id="eliminarProducto" src='../img/eliminar.png' alt='eliminar producto' height=25px onclick="eliminarProducto()">
+                    </button>
+                </th>
+                    
             </tr>`
             tbody.innerHTML += resumen 
 
-            const eliminar = document.getElementById(id);
-            console.log(eliminar)
+            const eliminar = document.getElementById("eliminarProducto");
+            /* console.log(eliminar) */
             eliminar.addEventListener("click", eliminarProducto)
     }  
 }
 
 function eliminarProducto(e){
-    /* alert("Producto eliminado") */
-    const btn = e.target;
-    const idBoton = btn.getAttribute('id');
-    const prodEncontrado = productos.find((item) => item.id == idBoton);
-    const enBolsa = bolsa.find((prod) => prod.id == prodEncontrado.id)
-    if (enBolsa) {
-        bolsa.splice({ ...prodEncontrado, cantidad: 1 })
-    }
-
     Swal.fire({
         title: '¿Desea eliminar este producto?',
-        text: "Podrá volver a agregarlo",
+        text: "Podrá volver a agregarlo luego",
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
@@ -102,6 +98,7 @@ function eliminarProducto(e){
             'Recuerde que puede volver a agregarlo',
             'success'
             )  
+            // Agregar como eliminar
         }
     })
 }
