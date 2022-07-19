@@ -36,6 +36,7 @@ if(bolsa.length == 0){
                 <thead>
                     <tr>
                         <th class='txtTabla'>Producto</th>
+                        <th class='txtTabla'>Nombre</th>
                         <th class='txtTabla'>Cantidad</th>
                         <th class='txtTabla'>Precio</th>
                         <th class='txtTabla'></th>
@@ -55,7 +56,8 @@ if(bolsa.length == 0){
         </div>
         <div class='btnContenedor'>
             <button class='btnComprar'>Comprar</button>
-        </div>`;
+        </div>
+        <button class='btnBorrarTodo'>Limpiar bolsa de compra</button>`;
     body.innerHTML += tabla;
     const tbody = document.getElementById('tbody')
     for (let i = 0; i < bolsa.length; i++) {
@@ -98,10 +100,35 @@ function eliminarProducto(e){
             'Recuerde que puede volver a agregarlo',
             'success'
             )  
-            // Agregar como eliminar
+            bolsa.splice(click, 1)
         }
     })
 }
+
+/* function agregarBolsa(e){
+    const btn = e.target;
+    const idBoton = btn.getAttribute('id');
+    const prodEncontrado = productos.find((item) => item.id == idBoton);
+    const enBolsa = bolsa.find((prod) => prod.id == prodEncontrado.id)
+    if (!enBolsa) {
+        bolsa.push({ ...prodEncontrado, cantidad: 1 })
+        /* conteo() */
+ /*    } else {
+        let bolsaFiltrada = bolsa.filter((prod) => prod.id != enBolsa.id)
+        bolsa = [...bolsaFiltrada, { ...enBolsa, cantidad: enBolsa.cantidad + 1 }]
+    }
+    localStorage.setItem('bolsa', JSON.stringify(bolsa))
+    Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Producto agregado a la bolsa',
+        showConfirmButton: false,
+        timer: 1500
+    })
+  } */
+
+
+
 
 // VACIAR BOLSA //
 

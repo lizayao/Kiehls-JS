@@ -106,6 +106,18 @@ body {
   border-radius: 3px;
 }
 
+#seleccion{
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  color: black;
+  background: red;
+  border-radius: 5px;
+  font-size: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
 .contenedorBolsa{
   width: 100%;
   display: flex;

@@ -1,6 +1,6 @@
 // PRODUCTOS //
 
-const productos = [
+let productos = [
     {
         id: "01",
         categoria: "Limpiadores y exfoliantes",
@@ -101,7 +101,7 @@ const productos = [
 
 // DETALLE PRODUCTOS //
 
-let bolsa
+let bolsa;
 
 if(JSON.parse(localStorage.getItem("bolsa"))){
     bolsa = JSON.parse(localStorage.getItem("bolsa"))
@@ -114,7 +114,7 @@ function detalleProductos(){
     for(let i = 0; i < productos.length; i++){
         const element = productos[i];
         const {id, nombre, descrip, precio, img} = element
-        const detalle = `
+        const card = `
                         <div class="tarjeta">
                             <p class="tituloProd">${nombre}</p>
                             <p class="descripProd">${descrip}</p>
@@ -129,13 +129,13 @@ function detalleProductos(){
                             </div>
                         </div>`
         const contenedorProductos = document.getElementById("contenedorProductos")
-        contenedorProductos.innerHTML += detalle
+        contenedorProductos.innerHTML += card
     }
 }
 
 detalleProductos()
 
-// AGREGAR BOLSA //
+// AGREGAR A LA BOLSA //
 
 const btnAgregar = document.getElementsByClassName("btnAgregar");
 
@@ -144,19 +144,21 @@ for (let i = 0; i < btnAgregar.length; i++){
     element.addEventListener("click", agregarBolsa)
 }
 
-function conteo(){ 
+function contador(){ 
     const contador = document.getElementById('seleccion')
     contador.innerHTML = bolsa.reduce((acc, prod) => acc + prod.cantidad, 0)
 } 
+
+contador();
 
 function agregarBolsa(e){
     const btn = e.target;
     const idBoton = btn.getAttribute('id');
     const prodEncontrado = productos.find((item) => item.id == idBoton);
+
     const enBolsa = bolsa.find((prod) => prod.id == prodEncontrado.id)
     if (!enBolsa) {
         bolsa.push({ ...prodEncontrado, cantidad: 1 })
-        /* conteo() */
     } else {
         let bolsaFiltrada = bolsa.filter((prod) => prod.id != enBolsa.id)
         bolsa = [...bolsaFiltrada, { ...enBolsa, cantidad: enBolsa.cantidad + 1 }]
