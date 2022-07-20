@@ -64,22 +64,22 @@ if(bolsa.length == 0){
         const element = bolsa[i];
         const {id, nombre, img, precio, cantidad} = element
         const resumen = `
-            <tr id=${id}>
+            <tr>
                 <th class='detallesTabla'><img class='imgProducto' src=${img} alt='foto del producto'></th>
                 <th class='tituloProd'>${nombre}</th>
                 <th>${cantidad}</th>
                 <th>$${(cantidad * precio).toLocaleString()}</th>
                 <th>
                     <button class="btn btn-danger btn-small">
-                        <img id="eliminarProducto" src='../img/eliminar.png' alt='eliminar producto' height=25px onclick="eliminarProducto()">
+                        <img id=${id} src='../img/eliminar.png' alt='eliminar producto' height=25px onclick="eliminarProducto()">
                     </button>
                 </th>    
             </tr>`
             tbody.innerHTML += resumen 
 
-            const eliminar = document.getElementById("eliminarProducto");
-            /* console.log(eliminar) */
-            eliminar.addEventListener("onclick", eliminarProducto)
+            const eliminar = document.getElementById(id);
+            console.log(eliminar);
+            eliminar.addEventListener("click", eliminarProducto);
     }  
 }
 
@@ -127,11 +127,9 @@ function eliminarProducto(e){
   } */
 
 
-
-
 // VACIAR BOLSA //
 
-let deleteCart = document.createElement("button")
+/* let deleteCart = document.createElement("button")
 deleteCart.innerText = ("Vaciar carrito")
 div.append(deleteCart)
 
@@ -145,4 +143,4 @@ deleteCart.onclick = () => {
 buttonCart.onclick = () => {
 div.innerHTML = ``    
 showCart()
-}
+} */
