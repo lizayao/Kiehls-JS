@@ -1,4 +1,4 @@
-let bolsa;
+var bolsa;
 
 if(JSON.parse(localStorage.getItem("bolsa"))){
     bolsa = JSON.parse(localStorage.getItem("bolsa"))

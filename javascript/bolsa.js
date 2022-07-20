@@ -1,4 +1,4 @@
-let bolsa
+var bolsa
 
 if(JSON.parse(localStorage.getItem("bolsa"))){
     bolsa = JSON.parse(localStorage.getItem("bolsa"))
@@ -78,7 +78,6 @@ if(bolsa.length == 0){
             tbody.innerHTML += resumen 
 
             const eliminar = document.getElementById(id);
-            console.log(eliminar);
             eliminar.addEventListener("click", eliminarProducto);
     }  
 }
@@ -99,9 +98,11 @@ function eliminarProducto(e){
             'Recuerde que puede volver a agregarlo',
             'success'
             )  
-            
+            bolsa.splice({ ...prodEncontrado, cantidad: 1 })
+            }
         }
-    })
+    )
+    localStorage.setItem('bolsa', JSON.stringify(bolsa))
 }
 
 /* function agregarBolsa(e){
@@ -111,8 +112,7 @@ function eliminarProducto(e){
     const enBolsa = bolsa.find((prod) => prod.id == prodEncontrado.id)
     if (!enBolsa) {
         bolsa.push({ ...prodEncontrado, cantidad: 1 })
-        /* conteo() */
- /*    } else {
+    } else {
         let bolsaFiltrada = bolsa.filter((prod) => prod.id != enBolsa.id)
         bolsa = [...bolsaFiltrada, { ...enBolsa, cantidad: enBolsa.cantidad + 1 }]
     }
