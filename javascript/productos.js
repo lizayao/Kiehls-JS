@@ -144,13 +144,6 @@ for (let i = 0; i < btnAgregar.length; i++){
     element.addEventListener("click", agregarBolsa)
 }
 
-function contador(){ 
-    const contador = document.getElementById('seleccion')
-    contador.innerHTML = bolsa.reduce((acc, prod) => acc + prod.cantidad, 0)
-} 
-
-contador();
-
 function agregarBolsa(e){
     const btn = e.target;
     const idBoton = btn.getAttribute('id');
