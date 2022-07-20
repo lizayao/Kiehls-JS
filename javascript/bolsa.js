@@ -70,17 +70,17 @@ if(bolsa.length == 0){
                 <th>${cantidad}</th>
                 <th>$${(cantidad * precio).toLocaleString()}</th>
                 <th>
-                    <button class="btn btn-danger btn-small">
-                        <img id=${id} src='../img/eliminar.png' alt='eliminar producto' height=25px onclick="eliminarProducto()">
+                    <button id="eliminarProducto" class="btn btn-danger btn-small" data-id=${id}>
+                        <img src='../img/eliminar.png' alt='eliminar producto' height=25px>
                     </button>
                 </th>    
             </tr>`
             tbody.innerHTML += resumen 
-
-            const eliminar = document.getElementById(id);
-            eliminar.addEventListener("click", eliminarProducto);
     }  
 }
+
+let eliminar = document.getElementById("eliminarProducto")
+eliminar.addEventListener("click", eliminarProducto)
 
 function eliminarProducto(e){
     Swal.fire({
@@ -98,7 +98,9 @@ function eliminarProducto(e){
             'Recuerde que puede volver a agregarlo',
             'success'
             )  
-            bolsa.splice({ ...prodEncontrado, cantidad: 1 })
+            const cursoId = e.target.getAttribute(`data-id`)
+            bolsa = bolsa.filter(curso => curso.id !== cursoId)
+            
             }
         }
     )
