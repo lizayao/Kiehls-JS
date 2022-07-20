@@ -101,15 +101,6 @@ let productos = [
 
 // DETALLE PRODUCTOS //
 
-let bolsa;
-
-if(JSON.parse(localStorage.getItem("bolsa"))){
-    bolsa = JSON.parse(localStorage.getItem("bolsa"))
-}else{
-    localStorage.setItem("bolsa", JSON.stringify([]))
-    bolsa = JSON.parse(localStorage.getItem("bolsa"))
-}
-
 function detalleProductos(){
     for(let i = 0; i < productos.length; i++){
         const element = productos[i];
