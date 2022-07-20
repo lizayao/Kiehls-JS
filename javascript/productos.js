@@ -164,6 +164,7 @@ function agregarBolsa(e){
         bolsa = [...bolsaFiltrada, { ...enBolsa, cantidad: enBolsa.cantidad + 1 }]
     }
     localStorage.setItem('bolsa', JSON.stringify(bolsa))
+    contador();
     Swal.fire({
         position: 'center',
         icon: 'success',

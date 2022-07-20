@@ -55,9 +55,9 @@ if(bolsa.length == 0){
             </table>
         </div>
         <div class='btnContenedor'>
-            <button class='btnComprar'>Comprar</button>
+            <button class='btnComprar'><a href="compra.html">Comprar</a></button>
         </div>
-        <button class='btnBorrarTodo'>Limpiar bolsa de compra</button>`;
+        <button class='btnBorrar'>Limpiar bolsa de compra</button>`;
     body.innerHTML += tabla;
     const tbody = document.getElementById('tbody')
     for (let i = 0; i < bolsa.length; i++) {
@@ -73,14 +73,13 @@ if(bolsa.length == 0){
                     <button class="btn btn-danger btn-small">
                         <img id="eliminarProducto" src='../img/eliminar.png' alt='eliminar producto' height=25px onclick="eliminarProducto()">
                     </button>
-                </th>
-                    
+                </th>    
             </tr>`
             tbody.innerHTML += resumen 
 
             const eliminar = document.getElementById("eliminarProducto");
             /* console.log(eliminar) */
-            eliminar.addEventListener("click", eliminarProducto)
+            eliminar.addEventListener("onclick", eliminarProducto)
     }  
 }
 
@@ -100,7 +99,7 @@ function eliminarProducto(e){
             'Recuerde que puede volver a agregarlo',
             'success'
             )  
-            bolsa.splice(click, 1)
+            
         }
     })
 }
@@ -132,7 +131,7 @@ function eliminarProducto(e){
 
 // VACIAR BOLSA //
 
-/* let deleteCart = document.createElement("button")
+let deleteCart = document.createElement("button")
 deleteCart.innerText = ("Vaciar carrito")
 div.append(deleteCart)
 
@@ -146,4 +145,4 @@ deleteCart.onclick = () => {
 buttonCart.onclick = () => {
 div.innerHTML = ``    
 showCart()
-} */
+}

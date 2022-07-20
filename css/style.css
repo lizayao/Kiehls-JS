@@ -8,6 +8,10 @@
     src: url(../tipografia/Arapey-Regular.ttf);
 }
 
+a{
+  text-decoration: none;
+}
+
 body {
     font-family: "Arapey";
 }
