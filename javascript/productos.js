@@ -1,6 +1,6 @@
 // PRODUCTOS //
 
-let productos = [
+let producto = [
     {
         id: "01",
         categoria: "Limpiadores y exfoliantes",
@@ -101,9 +101,9 @@ let productos = [
 
 // DETALLE PRODUCTOS //
 
-function detalleProductos(){
-    for(let i = 0; i < productos.length; i++){
-        const element = productos[i];
+/* function detalleProductos(){
+    for(let i = 0; i < producto.length; i++){
+        const element = producto[i];
         const {id, nombre, descrip, precio, img} = element
         const card = `
                         <div class="tarjeta">
@@ -123,8 +123,34 @@ function detalleProductos(){
         contenedorProductos.innerHTML += card
     }
 }
+detalleProductos() */
 
-detalleProductos()
+
+// FETCH (ruta relativa) //
+const contenedorProductos = document.getElementById("contenedorProductos")
+fetch("./json/local.json")
+    .then((result) => result.json())
+    .then((data) => {
+        data.forEach((producto) => {
+            const card = document.createElement("div")
+            card.innerHTML = `
+                        <div class="tarjeta">
+                            <p class="tituloProd">${producto.nombre}</p>
+                            <p class="descripProd">${producto.descrip}</p>
+                            <div>
+                                <img class="imgProducto" src=${producto.img} alt=""/>
+                            </div>
+                            <div class="precioProd">
+                                <p>$${producto.precio.toLocaleString()}</p>
+                            </div>
+                            <div>
+                                <button id=${producto.id} class="btnAgregar"> Agregar a la bolsa </button>
+                            </div>
+                        </div>`
+            contenedorProductos.append(card)
+        })
+    })
+
 
 // AGREGAR A LA BOLSA //
 

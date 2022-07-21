@@ -70,7 +70,7 @@ if(bolsa.length == 0){
                 <th>${cantidad}</th>
                 <th>$${(cantidad * precio).toLocaleString()}</th>
                 <th>
-                    <button id="eliminarProducto" class="btn btn-danger btn-small" data-id=${id}>
+                    <button onclick="eliminar(${id})" id="eliminarProducto" class="btn btn-danger btn-small" data-id=${id}>
                         <img src='../img/eliminar.png' alt='eliminar producto' height=25px>
                     </button>
                 </th>    
