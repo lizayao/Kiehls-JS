@@ -1,6 +1,6 @@
 // PRODUCTOS //
 
-let producto = [
+/* let producto = [
     {
         id: "01",
         categoria: "Limpiadores y exfoliantes",
@@ -97,7 +97,7 @@ let producto = [
         precio: 6990,
         img: "../img/kiehls/pore.jpg"
     },
-]
+] */
 
 // DETALLE PRODUCTOS //
 
@@ -128,9 +128,10 @@ detalleProductos() */
 
 // FETCH (ruta relativa) //
 const contenedorProductos = document.getElementById("contenedorProductos")
-fetch("./json/local.json")
+fetch("../json/local.json")
     .then((result) => result.json())
     .then((data) => {
+        console.log(data)
         data.forEach((producto) => {
             const card = document.createElement("div")
             card.innerHTML = `
@@ -144,7 +145,7 @@ fetch("./json/local.json")
                                 <p>$${producto.precio.toLocaleString()}</p>
                             </div>
                             <div>
-                                <button id=${producto.id} class="btnAgregar"> Agregar a la bolsa </button>
+                                <button id=${producto.id} class="btnAgregar" onclick="agregarBolsa(${producto.id})"> Agregar a la bolsa </button>
                             </div>
                         </div>`
             contenedorProductos.append(card)
@@ -155,15 +156,15 @@ fetch("./json/local.json")
 // AGREGAR A LA BOLSA //
 
 const btnAgregar = document.getElementsByClassName("btnAgregar");
-
 for (let i = 0; i < btnAgregar.length; i++){
     const element = btnAgregar[i];
     element.addEventListener("click", agregarBolsa)
 }
 
+
 function agregarBolsa(e){
     const btn = e.target;
-    const idBoton = btn.getAttribute('id');
+    const idBoton = btn.getAttribute('producto.id');
     const prodEncontrado = productos.find((item) => item.id == idBoton);
 
     const enBolsa = bolsa.find((prod) => prod.id == prodEncontrado.id)

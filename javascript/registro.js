@@ -1,4 +1,6 @@
 
+
+
 const formularioRegistro = document.getElementById("formulario");
 formularioRegistro.addEventListener("submit", validarFormulario);
 

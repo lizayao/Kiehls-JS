@@ -1,116 +1,59 @@
 * {
-    padding: 0;
-    margin: 0;
-  }
-
-@font-face {
-    font-family: "Arapey";
-    src: url(../tipografia/Arapey-Regular.ttf);
+  padding: 0;
+  margin: 0;
 }
 
-a{
+@font-face {
+  font-family: "Arapey";
+  src: url(../tipografia/Arapey-Regular.ttf);
+}
+a {
   text-decoration: none;
 }
 
 body {
-    font-family: "Arapey";
-}
-  
-  .logo img {
-    width: 20%;
-  }
-  
-  header {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    z-index: 50;
-  }
-  
-  nav {
-    background-color: black;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: no-wrap;
-    justify-content: space-between;
-    align-items: center;
-  }
-  nav li {
-    display: inline-block;
-    width: 180px;
-    position: relative;
-    font-size: 20px;
-    line-height: 1.5;
-  }
-  nav li a {
-    text-decoration: none;
-    color: white;
-  }
-  nav ul {
-    list-style: none;
-    font-size: 0;
-  }
-
-.portada{
-  text-align: center;
-  
-  }
-
-.infoInicio{
-  display: flex;
-  flex-direction: row;
-  text-align: center;
-  font-size: 20px;
-  margin: 50px;
-  padding: 50px;
+  font-family: "Arapey";
 }
 
-#contenedorProductos{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin-top: 20px;
+.logo img {
+  width: 20%;
 }
 
-.tarjeta{
-  max-width: 250px;
-  position: relative;
-  padding: 20px 20px;
-  margin: 0 auto;
-  margin-bottom: 40px;
-  border-radius: 4px;
-  background: white;
-  box-shadow: 2px 2px 5px rgb(66, 66, 66);
-  text-align: center;
+header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 50;
 }
 
-.tituloProd{
-  text-align: center;
-  text-decoration: underline;
-  font-weight: bold;
-  font-size: 18px;
-}
-.imgProducto{
-  position: relative;
-  width: 100%;
-  margin: 5px 0;
-}
-.precioProd{
-  text-align: center;
-  font-weight: bold;
-  font-size: 16px;
-}
-.descripProd{
-  text-align: center;
-}
-.btnAgregar{
-  color: white;
-  padding: 5px;
+nav {
   background-color: black;
-  border-radius: 3px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: no-wrap;
+  justify-content: space-between;
+  align-items: center;
 }
 
-#seleccion{
+nav li {
+  display: inline-block;
+  width: 180px;
+  position: relative;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+nav li a {
+  text-decoration: none;
+  color: white;
+}
+
+nav ul {
+  list-style: none;
+  font-size: 0;
+}
+
+#seleccion {
   position: absolute;
   width: 14px;
   height: 14px;
@@ -122,87 +65,128 @@ body {
   font-weight: bold;
 }
 
-.contenedorBolsa{
+#contenedorProductos {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.tarjeta {
+  max-width: 250px;
+  position: relative;
+  padding: 20px 20px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  border-radius: 4px;
+  background: white;
+  box-shadow: 2px 2px 5px rgb(66, 66, 66);
+  text-align: center;
+}
+
+.tituloProd {
+  text-align: center;
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.imgProducto {
+  position: relative;
+  width: 100%;
+  margin: 5px 0;
+}
+
+.precioProd {
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.descripProd {
+  text-align: center;
+}
+
+.btnAgregar {
+  color: white;
+  padding: 5px;
+  background-color: black;
+  border-radius: 3px;
+}
+
+.contenedorBolsa {
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.textoBolsa{
+
+.textoBolsa {
   text-align: center;
   color: black;
   margin: 20px;
 }
 
-.contenedorTabla{
+.contenedorTabla {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 20px
+  margin: 20px;
 }
-.txtTabla{
+
+.txtTabla {
   padding: 10px;
   font-size: 20px;
 }
 
-table{
+table {
   border-radius: 5px;
   color: black;
 }
 
-table tr th:first-child{
+table tr th:first-child {
   width: 100px;
 }
 
-table tr th:nth-child(2){
+table tr th:nth-child(2) {
   width: 500px;
 }
 
-thead tr th{
+thead tr th {
   background: black;
-  color: white; 
+  color: white;
 }
 
-tbody tr{
+tbody tr {
   background: white;
 }
 
-tfoot tr th{
+tfoot tr th {
   background: black;
   color: white;
   padding: 10px;
 }
 
-.tituloPrincipal{
-  text-align: center;
-  text-decoration: underline;
-  margin: 20px;
-}
-
-#filtro{
-  text-align: right;
-  margin: 20px;
-}
-
-.btnVolver{
+.btnVolver {
   padding: 10px 20px;
   border-radius: 15px;
   text-decoration: none;
   color: white;
   background-color: black;
 }
+
 /* .btnVolver:hover{
   color: black;
   background: white;
 } */
-
-.btnContenedor{
+.btnContenedor {
   display: flex;
   justify-content: center;
   margin: 10px;
 }
-.btnComprar{
+
+.btnComprar {
   padding: 10px 20px;
   border-radius: 15px;
   text-decoration: none;
@@ -210,7 +194,8 @@ tfoot tr th{
   background-color: black;
   border: none;
 }
-.btnComprar:hover{
+
+.btnComprar:hover {
   color: black;
   background: white;
   /*No esta aplicando el borde*/
@@ -218,7 +203,31 @@ tfoot tr th{
   border-color: black;
 }
 
-.registro{
+.portada {
+  text-align: center;
+}
+
+.infoInicio {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  font-size: 20px;
+  margin: 50px;
+  padding: 50px;
+}
+
+.tituloPrincipal {
+  text-align: center;
+  text-decoration: underline;
+  margin: 20px;
+}
+
+#filtro {
+  text-align: right;
+  margin: 20px;
+}
+
+.registro {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -226,20 +235,20 @@ tfoot tr th{
   margin: 10px;
 }
 
-#formulario{
+#formulario {
   padding: 10px;
 }
 
-.contacto{
+.contacto {
   width: 500px;
   height: 700px;
-  background-color: rgba(128, 128, 128, 0.447); 
+  background-color: rgba(128, 128, 128, 0.447);
   background-size: cover;
   border-radius: 10px;
   border: ridge 2px gray;
   padding: 40px;
   margin: 10px;
   margin-left: auto;
-  margin-right: auto;    
-  margin-top: 30px;   
-}
+  margin-right: auto;
+  margin-top: 30px;
+}/*# sourceMappingURL=style.css.map */

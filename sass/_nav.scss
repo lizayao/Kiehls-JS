@@ -1,0 +1,38 @@
+nav {
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: no-wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav li {
+    display: inline-block;
+    width: 180px;
+    position: relative;
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+nav li a {
+    text-decoration: none;
+    color: white;
+}
+
+nav ul {
+    list-style: none;
+    font-size: 0;
+}
+
+#seleccion{
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    color: black;
+    background: red;
+    border-radius: 5px;
+    font-size: 10px;
+    text-align: center;
+    font-weight: bold;
+}

@@ -1,0 +1,84 @@
+.contenedorBolsa{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .textoBolsa{
+    text-align: center;
+    color: black;
+    margin: 20px;
+  }
+  
+  .contenedorTabla{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 20px
+  }
+  .txtTabla{
+    padding: 10px;
+    font-size: 20px;
+  }
+  
+  table{
+    border-radius: 5px;
+    color: black;
+  }
+  
+  table tr th:first-child{
+    width: 100px;
+  }
+  
+  table tr th:nth-child(2){
+    width: 500px;
+  }
+  
+  thead tr th{
+    background: black;
+    color: white; 
+  }
+  
+  tbody tr{
+    background: white;
+  }
+  
+  tfoot tr th{
+    background: black;
+    color: white;
+    padding: 10px;
+  }
+
+  .btnVolver{
+    padding: 10px 20px;
+    border-radius: 15px;
+    text-decoration: none;
+    color: white;
+    background-color: black;
+  }
+  /* .btnVolver:hover{
+    color: black;
+    background: white;
+  } */
+  
+  .btnContenedor{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+  }
+  .btnComprar{
+    padding: 10px 20px;
+    border-radius: 15px;
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    border: none;
+  }
+  .btnComprar:hover{
+    color: black;
+    background: white;
+    /*No esta aplicando el borde*/
+    border-radius: 2px;
+    border-color: black;
+  }

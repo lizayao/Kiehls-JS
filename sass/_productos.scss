@@ -1,0 +1,48 @@
+#contenedorProductos{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+  
+.tarjeta{
+    max-width: 250px;
+    position: relative;
+    padding: 20px 20px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    border-radius: 4px;
+    background: white;
+    box-shadow: 2px 2px 5px rgb(66, 66, 66);
+    text-align: center;
+  }
+  
+.tituloProd{
+    text-align: center;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+.imgProducto{
+    position: relative;
+    width: 100%;
+    margin: 5px 0;
+  }
+
+.precioProd{
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+.descripProd{
+    text-align: center;
+  }
+  
+.btnAgregar{
+    color: white;
+    padding: 5px;
+    background-color: black;
+    border-radius: 3px;
+  }

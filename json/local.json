@@ -3,7 +3,7 @@
         "id": "01",
         "categoria": "Limpiadores y exfoliantes",
         "nombre": "Ultra Facial Oil-Free Cleanser",
-        "descrip": "",
+        "descrip": "Un limpiador facial suave y espumoso para pieles normales a oleosas.",
         "precio": 6950,
         "img": "../img/kiehls/ultrafacial.JPG"
     },
@@ -11,6 +11,7 @@
         "id": "02",
         "categoria": "Limpiadores y exfoliantes",
         "nombre": "Cucumber Herbal Conditioning Cleanser",
+        "descrip": "Un limpiador facial en gel espumoso con Pepino efectivo y suave para pieles secas y sensibles.",
         "precio": 7130,
         "img": "../img/kiehls/cucumber.JPG"
     },
@@ -18,6 +19,7 @@
         "id": "03",
         "categoria": "Limpiadores y exfoliantes",
         "nombre": "Rare Earth Deep Pore Daily Cleanser",
+        "descrip": "Un limpiador facial profundo, que desintoxica los poros y exfolia suavemente la piel.",
         "precio": 6420,
         "img": "../img/kiehls/rareEarth.jpg"
     },
@@ -25,6 +27,7 @@
         "id": "04",
         "categoria": "Limpiadores y exfoliantes",
         "nombre": "Ultrafacial Cleanser",
+        "descrip": "Un limpiador espumoso suave para todo tipo de pieles. Es muy eficiente y recomendado.",
         "precio": 6390,
         "img": "../img/kiehls/facialcleanser.jpg"
     },
