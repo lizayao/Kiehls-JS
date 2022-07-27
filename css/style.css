@@ -26,6 +26,10 @@ header {
   z-index: 50;
 }
 
+button {
+  text-decoration: none;
+}
+
 nav {
   background-color: black;
   display: flex;
@@ -204,7 +208,8 @@ tfoot tr th {
 }
 
 .portada {
-  text-align: center;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .infoInicio {

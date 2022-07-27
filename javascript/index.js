@@ -1,7 +1,7 @@
 
 const body = `
     <div id="portada">
-      <img src="img/portadas/local.jpg">
+      <img src="img/beneficios.jpg" height= 85px>
     </div>
     <div class="infoInicio">
       <img src="img/portadas/portada1.jpg" height=500px>
@@ -19,6 +19,6 @@ inicio.innerHTML += body
 setTimeout(() => {
     Swal.fire({
         title: '¡Envío gratis!',
-        text: 'Superando los $10.000 en la compra ofrecemos envío gratis a todo el país.',
+        text: 'Superando los $25.000 en la compra ofrecemos envío gratis a todo el país.',
       })
 }, 2000)

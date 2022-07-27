@@ -161,7 +161,6 @@ for (let i = 0; i < btnAgregar.length; i++){
     element.addEventListener("click", agregarBolsa)
 }
 
-
 function agregarBolsa(e){
     const btn = e.target;
     const idBoton = btn.getAttribute('producto.id');
