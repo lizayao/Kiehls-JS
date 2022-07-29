@@ -1,6 +1,3 @@
-
-
-
 const formularioRegistro = document.getElementById("formulario");
 formularioRegistro.addEventListener("submit", validarFormulario);
 
@@ -14,3 +11,4 @@ function validarFormulario(e) {
         timer: 1500
       })
 }
+

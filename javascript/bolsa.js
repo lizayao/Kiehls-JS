@@ -79,10 +79,12 @@ if(bolsa.length == 0){
     }  
 }
 
+// ELIMINAR PRODUCTO //
+
 let eliminar = document.getElementById("eliminarProducto")
 eliminar.addEventListener("click", eliminarProducto)
 
-function eliminarProducto(e){
+function eliminarProducto(prodBolsa){
     Swal.fire({
         title: '¿Desea eliminar este producto?',
         text: "Podrá volver a agregarlo luego",
@@ -98,13 +100,14 @@ function eliminarProducto(e){
             'Recuerde que puede volver a agregarlo',
             'success'
             )  
-            const cursoId = e.target.getAttribute(`data-id`)
-            bolsa = bolsa.filter(curso => curso.id !== cursoId)
-            
+            const item = bolsa.find(e=>e.id === prodBolsa.id)
+            const indice = bolsa.indexOf(item)
+            bolsa.splice(indice, 1)
+            actualizarBolsa();
             }
         }
     )
-    localStorage.setItem('bolsa', JSON.stringify(bolsa))
+    
 }
 
 /* function agregarBolsa(e){
