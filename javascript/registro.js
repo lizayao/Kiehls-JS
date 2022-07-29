@@ -11,4 +11,3 @@ function validarFormulario(e) {
         timer: 1500
       })
 }
-

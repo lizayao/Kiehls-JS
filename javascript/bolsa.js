@@ -25,7 +25,7 @@ if(bolsa.length == 0){
     const titulo = `
         <div class='contenedorBolsa'>
             <h1 class='textoBolsa'>Bolsa de compras</h1>
-            <a class='btnVolver' href='productos.html'>
+            <a class='btnVolver' href='index.html'>
                 <button>Seguir eligiendo</button>
             </a>
         </div>`;
