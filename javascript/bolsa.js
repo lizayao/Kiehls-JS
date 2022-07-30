@@ -16,7 +16,7 @@ if(bolsa.length == 0){
     const texto = `
         <div class='contenedorBolsa'>
             <h1 class='textoBolsa'>No ha seleccionado ningún producto</h1>
-            <a class='btnVolver' href='productos.html'>
+            <a class='btnVolver' href='../index.html'>
                 <button>Volver</button>
             </a>
         </div>`;    
@@ -25,7 +25,7 @@ if(bolsa.length == 0){
     const titulo = `
         <div class='contenedorBolsa'>
             <h1 class='textoBolsa'>Bolsa de compras</h1>
-            <a class='btnVolver' href='index.html'>
+            <a class='btnVolver' href='../index.html'>
                 <button>Seguir eligiendo</button>
             </a>
         </div>`;
@@ -36,16 +36,17 @@ if(bolsa.length == 0){
                 <thead>
                     <tr>
                         <th class='txtTabla'>Producto</th>
-                        <th class='txtTabla'>Nombre</th>
                         <th class='txtTabla'>Cantidad</th>
                         <th class='txtTabla'>Precio</th>
-                        <th class='txtTabla'></th>
+                        <th></th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody id='tbody'>
                 </tbody>
                 <tfoot>
                     <tr>
+                        <th></th>
                         <th></th>
                         <th></th>
                         <th class='txtTotal'>Total:</th>

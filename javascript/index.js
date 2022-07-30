@@ -1,6 +1,6 @@
 // PRODUCTOS //
 
-/* let producto = [
+let productos = [
     {
         id: "01",
         categoria: "Limpiadores y exfoliantes",
@@ -97,7 +97,7 @@
         precio: 6990,
         img: "../img/kiehls/pore.jpg"
     },
-] */
+]
 
 // DETALLE PRODUCTOS //
 
@@ -166,30 +166,10 @@ fetch("../json/local.json")
         })
     })
 
-
 // AGREGAR A LA BOLSA //
 
-/* Toastify({
-
-    text: "This is a toast",
-    
-    duration: 3000
-    
-    }).showToast(); */
-
-const btnAgregar = document.getElementsByClassName("btnAgregar");
-for (let i = 0; i < btnAgregar.length; i++){
-    const element = btnAgregar[i];
-    element.addEventListener("click", agregarBolsa)
-}
-
-function agregarBolsa(e){
-    console.log(e);
-    const btn = e.target;
-    console.log(btn);
-    const idBoton = btn.getAttribute(id);
-    const prodEncontrado = productos.find((item) => item.id == idBoton);
-
+function agregarBolsa(id){
+    const prodEncontrado = productos.find((item) => item.id == id);
     const enBolsa = bolsa.find((prod) => prod.id == prodEncontrado.id)
     if (!enBolsa) {
         bolsa.push({ ...prodEncontrado, cantidad: 1 })
@@ -199,13 +179,22 @@ function agregarBolsa(e){
     }
     localStorage.setItem('bolsa', JSON.stringify(bolsa))
     contador();
-    Swal.fire({
+    Toastify({
+        text: "Producto agregado a la bolsa",
+        duration: 3000,
+        gravity: "bottom",
+        position: "right",
+        style:{
+            background: "goldenrod",
+        }
+        }).showToast();
+/*     Swal.fire({
         position: 'center',
         icon: 'success',
         title: 'Producto agregado a la bolsa',
         showConfirmButton: false,
         timer: 1500
-    })
+    }) */
   }
 
 // FILTRAR PRODUCTOS //
