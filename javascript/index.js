@@ -188,13 +188,6 @@ function agregarBolsa(id){
             background: "goldenrod",
         }
         }).showToast();
-/*     Swal.fire({
-        position: 'center',
-        icon: 'success',
-        title: 'Producto agregado a la bolsa',
-        showConfirmButton: false,
-        timer: 1500
-    }) */
   }
 
 // FILTRAR PRODUCTOS //
