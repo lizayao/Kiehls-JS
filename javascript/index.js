@@ -1,6 +1,6 @@
 // PRODUCTOS //
 
-let productos = [
+/* let productos = [
     {
         id: "01",
         categoria: "Limpiadores y exfoliantes",
@@ -97,7 +97,7 @@ let productos = [
         precio: 6990,
         img: "../img/kiehls/pore.jpg"
     },
-]
+] */
 
 // DETALLE PRODUCTOS //
 
@@ -147,8 +147,26 @@ fetch("../json/local.json")
     .then((data) => {
         console.log(data)
         data.forEach((producto) => {
-            const card = document.createElement("div")
-            card.innerHTML = `
+            let card = document.createElement("div")
+            card.className = "tarjeta"
+            let name = document.createElement("h3")
+            name.innerText = producto.nombre
+            name.className = "tituloProd"
+            let descrip = document.createElement("p")
+            descrip.innerText = producto.descrip
+            descrip.className = "descripProd"
+            let img = document.createElement("img")
+            img.setAttribute("src", producto.img)
+            img.className = "imgProducto"
+            let price = document.createElement("p")
+            price.innerText = "$ " + (producto.precio.toLocaleString())
+            price.className = "precioProd"
+            let buyButton = document.createElement("button")
+            buyButton.innerText = "Agregar a la bolsa"
+            buyButton.className = "btnAgregar"
+            card.append(name, descrip, img, price, buyButton)
+            contenedorProductos.append(card)
+/*             card.innerHTML = `
                         <div class="tarjeta">
                             <p class="tituloProd">${producto.nombre}</p>
                             <p class="descripProd">${producto.descrip}</p>
@@ -161,8 +179,8 @@ fetch("../json/local.json")
                             <div>
                                 <button id=${producto.id} class="btnAgregar" onclick="agregarBolsa(${producto.id})"> Agregar a la bolsa </button>
                             </div>
-                        </div>`
-            contenedorProductos.append(card)
+                        </div>` */
+            /* contenedorProductos.append(card) */
         })
     })
 
