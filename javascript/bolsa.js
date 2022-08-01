@@ -96,20 +96,26 @@ function eliminarProducto(prodBolsa){
         confirmButtonText: 'Eliminar'
     }).then((result) => {
         if (result.isConfirmed) {
-            Swal.fire(
-            'Producto eliminado',
-            'Recuerde que puede volver a agregarlo',
-            'success'
-            )  
             const item = bolsa.find(e=>e.id === prodBolsa.id)
             const indice = bolsa.indexOf(item)
             bolsa.splice(indice, 1)
             actualizarBolsa();
-            }
+            Swal.fire(
+            'Producto eliminado',
+            'Recuerde que puede volver a agregarlo',
+            'success'
+            )
         }
-    )
-    
+    })
 }
+
+function actualizarBolsa() {
+    bolsa.forEach((enBolsa) => {
+        const div = document.createElement("div")
+        div.className = ""
+    })
+}
+
 
 /* function agregarBolsa(e){
     const btn = e.target;

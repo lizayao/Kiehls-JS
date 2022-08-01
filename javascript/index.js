@@ -159,13 +159,14 @@ fetch("../json/local.json")
             img.setAttribute("src", producto.img)
             img.className = "imgProducto"
             let price = document.createElement("p")
-            price.innerText = "$ " + (producto.precio.toLocaleString())
+            price.innerText = "$" + (producto.precio.toLocaleString())
             price.className = "precioProd"
-            let buyButton = document.createElement("button")
-            buyButton.innerText = "Agregar a la bolsa"
-            buyButton.className = "btnAgregar"
-            card.append(name, descrip, img, price, buyButton)
+            let btnAgregar = document.createElement("button")
+            btnAgregar.innerText = "Agregar a la bolsa"
+            btnAgregar.className = "btnAgregar"
+            card.append(name, descrip, img, price, btnAgregar)
             contenedorProductos.append(card)
+            /* btnAgregar.addEventListener("click", agregarBolsa(id)) */
 /*             card.innerHTML = `
                         <div class="tarjeta">
                             <p class="tituloProd">${producto.nombre}</p>
@@ -207,46 +208,3 @@ function agregarBolsa(id){
         }
         }).showToast();
   }
-
-// FILTRAR PRODUCTOS //
-
-/* let buscador = document.getElementById("inputSearch")
-let filtrar = document.getElementById("filtrar")
-
-function filtrarPorCat() {
-    let verTodo = document.createElement("button")
-    verTodo.innerText = ("Ver Todo")
-    showProducts.append(verTodo)
-    const filteredProducts = products.filter((product) => product.category === buscador.value)
-    console.log(filteredProducts)
-
-    filteredProducts.forEach((filter) => {
-        let cardFilter = document.createElement("div")
-        showAllProducts.append(cardFilter)
-        let imgFilter = document.createElement("img")
-        imgFilter.setAttribute("src", filter.img)
-        let nameFilter = document.createElement("h3")
-        nameFilter.innerText = (filter.name)
-        let priceFilter = document.createElement("p")
-        priceFilter.innerText = (filter.price)
-        let buyButtonFilter = document.createElement("button")
-        buyButtonFilter.innerText = ("Agregar al carrito")
-        cardFilter.append(imgFilter, nameFilter, priceFilter, buyButtonFilter)
-
-    })
-
-    verTodo.onclick = () => {
-        showAllProducts.innerHTML = ``
-        mostrarProductos()
-    }
-}
-
-buscador.onchange = () => {
-    showAllProducts.innerHTML = ``
-    filtrarPorCat()
-}
-
-filtrar.onclick = () => {
-    showAllProducts.innerHTML = ``
-    filtrarPorCat()
-} */
