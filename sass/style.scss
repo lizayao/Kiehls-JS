@@ -35,7 +35,6 @@ button{
 @import "_productos";
 @import "_bolsa";
 
-
 .portada{
   object-fit: cover;
   
@@ -54,17 +53,17 @@ button{
   margin: 10px;
 }
 
-#formulario{
-  padding: 10px;
+h1{
+  text-align: center;
+  padding-top: 20px;
+  font-weight: bold;
 }
 
-.formulario{
+#formulario{
   width: 500px;
-  height: 700px;
-  background-color: rgba(128, 128, 128, 0.447); 
-  background-size: cover;
+  height: 550px;
   border-radius: 10px;
-  border: ridge 2px gray;
+  border: ridge 2px black;
   padding: 40px;
   margin: 10px;
   margin-left: auto;

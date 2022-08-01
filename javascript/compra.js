@@ -6,7 +6,7 @@ function validarFormulario(e) {
     Swal.fire({
         position: 'center',
         icon: 'success',
-        title: 'Datos registrados',
+        title: 'Muchas gracias por su compra!',
         showConfirmButton: false,
         timer: 1500
       })

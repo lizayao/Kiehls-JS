@@ -12,6 +12,7 @@ const totalBolsa = () => {
 }
 
 const body = document.getElementById('bolsa');
+
 function actualizarBolsa(){
     if(bolsa.length == 0){
         const texto = `
@@ -58,17 +59,36 @@ function actualizarBolsa(){
             </div>
             <div class='btnContenedor'>
                 <button class='btnComprar'><a href="compra.html">Comprar</a></button>
-            </div>
-            <button class='btnBorrar'>Limpiar bolsa de compra</button>`;
+            </div>`;
         body.innerHTML += tabla;
         const tbody = document.getElementById('tbody')
 
         for (let i = 0; i < bolsa.length; i++) {
-            const element = bolsa[i];
-            const {id, nombre, img, precio, cantidad} = element
-            let resumen = document.createElement("tr")
-            let 
+            const producto = bolsa[i];
+            const {id, nombre, img, precio, cantidad} = producto
 
+            let resumen = document.createElement("tr")
+
+            let detallesTabla = document.createElement("th")
+            detallesTabla.setAttribute("src", producto.img) 
+            detallesTabla.className = "detallesTabla"
+            detallesTabla.innerText = producto.img
+
+            let tituloProd = document.createElement("th")
+            tituloProd.innerText = producto.nombre
+
+            let cant = document.createElement("th")
+            cant.innerText = cantidad
+
+            let price = document.createElement("th")
+            price.innerText = "$" + (cantidad * precio).toLocaleString()
+
+            let btnEliminar = document.createElement("img")
+            btnEliminar.setAttribute("src","../img/eliminar.png")
+            btnEliminar.className = "btn btn-danger btn-small"
+            btnEliminar.id = `${producto.id}`;
+
+            resumen.append(nombre, img, precio, cantidad)
 
  /*        const resumen = `
             <tr>
@@ -83,10 +103,10 @@ function actualizarBolsa(){
                 </th>    
             </tr>` */
 
-            tbody.append += resumen 
+            tbody.append(resumen)
 
-            let eliminar = document.getElementById("eliminarProducto")
-            eliminar.addEventListener("click", function() {
+            /* let eliminar = document.getElementById("eliminarProducto") */
+            btnEliminar.addEventListener("click", function() {
                 eliminarProducto(id, bolsa);
             })
         }
