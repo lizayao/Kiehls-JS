@@ -70,23 +70,36 @@ function actualizarBolsa(){
             let resumen = document.createElement("tr")
 
             let detallesTabla = document.createElement("th")
-            detallesTabla.setAttribute("src", producto.img) 
             detallesTabla.className = "detallesTabla"
-            detallesTabla.innerText = producto.img
+            
+            let imagenTabla = document.createElement("img");
+            imagenTabla.setAttribute("src", producto.img) 
+
+            detallesTabla.appendChild(imagenTabla);
+            
+            resumen.appendChild(detallesTabla);
 
             let tituloProd = document.createElement("th")
             tituloProd.innerText = producto.nombre
 
+            resumen.appendChild(tituloProd);
+
             let cant = document.createElement("th")
-            cant.innerText = cantidad
+            cant.innerText = cantidad;
+
+            resumen.appendChild(cant);
 
             let price = document.createElement("th")
-            price.innerText = "$" + (cantidad * precio).toLocaleString()
+            price.innerText = "$" + (cantidad * precio).toLocaleString();
+
+            resumen.appendChild(price);
 
             let btnEliminar = document.createElement("img")
             btnEliminar.setAttribute("src","../img/eliminar.png")
             btnEliminar.className = "btn btn-danger btn-small"
             btnEliminar.id = `${producto.id}`;
+
+            resumen.appendChild(btnEliminar);
 
             resumen.append(nombre, img, precio, cantidad)
 
